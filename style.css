@@ -1,0 +1,734 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --primary:#161a1d;
+   --light-grey:#232629;
+   --white:white;
+   --green:rgb(102,185,51);
+   --darkerGreen:rgb(77, 134, 41);
+   --fontSize:16px;
+   
+}
+
+#mobile-nav,
+#mobile-expand-nav {
+    display: none;
+}
+
+
+
+body {
+    background-color: var(--primary);
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+}
+
+
+
+/* NAVIGATION SETUP */
+
+
+nav {
+    width: 100%;
+    /* Background - setup */
+    background-image: url(Images/gaming-image-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* clip-path: polygon(0 0, 100% 2%, 100% 75%, 0% 100%); */
+    background-color: rgba(0, 0, 0, 0.45); /* Black color with 50% transparency */
+    background-blend-mode: darken;
+    /* Background - end */
+    height: 200px; 
+    /* Content - setup */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1rem;
+
+}
+
+nav a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h4 {
+color: var(--green);
+text-shadow: 0 0 5px var(--green);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    color: var(--white);
+    column-gap: 3rem;
+
+}
+
+nav ul a,
+.read-more-button,
+.footer-layer-1 a {
+    text-decoration: none;
+    color: var(--white); 
+    padding: 0.3rem 1.8rem;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition: all 0.15s ease-in-out;
+}
+
+
+nav ul a:hover,
+.read-more-button:hover,
+.footer-layer-1 a:hover {
+background-color: var(--green);
+clip-path: polygon(25% 0%, 100% 0%, 65% 100%, 0% 100%);
+
+
+
+}
+
+
+
+
+
+
+
+/* MAIN */
+
+
+main {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+animation: slideInLeft 0.75s ease-in-out forwards;
+
+}
+
+
+
+.naslov {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+        
+    
+}
+
+
+.naslov img {
+    transform: scale(0.5);
+   filter: drop-shadow(0 0 5px var(--green));
+}
+
+
+
+/* Animacije */
+
+@keyframes slideInLeft {
+
+from {
+transform: translateX(-130px);
+}
+
+
+to{
+transform: translateX(0);
+}
+
+
+
+
+}
+
+
+@keyframes appear {
+
+from {
+    opacity: 0;
+    scale: 0.5;
+}
+
+to {
+    opacity: 1;
+    scale: 1;
+}
+
+
+
+}
+
+
+
+
+
+
+.opis-sajta {
+    color: var(--white);
+    line-height: 2rem;
+    padding: 1rem;
+    /* blok koda animacije: */
+    animation: slideInLeft 0.75s ease-in-out forwards;
+
+ 
+
+    }
+
+
+
+
+h2 {
+    margin-top: 5rem;
+background-color: var(--light-grey);
+clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
+padding: 1rem 2rem;
+}
+
+
+
+
+/* NEWS CONTAINER */
+
+.news-container {
+   
+    border: 2px solid var(--green);
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* scroll animacije */
+animation: appear linear;
+animation-timeline: view();
+animation-range: entry 0%;
+}
+
+
+.image-container {
+    width: 40%;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+
+
+
+
+.image-box img {
+    width: 100%;
+   cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+.image-box img:hover {
+    transform: scale(1.2);
+    
+}
+
+
+.news-about {
+    width: 60%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 2rem;
+}
+
+
+.news-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+h3 {
+    color: var(--darkerGreen);
+    transition: all 0.15s ease-in;
+}
+
+h3:hover {
+color: var(--green);
+}
+
+.news-about p,
+.news-about a {
+    color: var(--white);
+}
+
+
+.news-about a {
+text-decoration: none;
+}
+
+.author-name {
+    color: var(--darkerGreen);
+    transition: all 0.15s ease-in;
+}
+
+.author-name:hover {
+    color: var(--white);
+}
+
+
+
+/* END */
+
+
+
+.arrow-up {
+    opacity: 0;
+    width: 1.5%;
+    position: fixed;
+    bottom: 2rem;
+    right: 4rem;
+    transition: opacity 0.5s ease-in-out;
+   
+  
+  }
+  
+  .arrow-up.visible {
+    opacity: 1;
+   
+  }
+  
+  
+
+
+
+
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    /* Background - setup */
+    background-image: url(Images/gaming-image-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* clip-path: polygon(0 0, 100% 2%, 100% 75%, 0% 100%); */
+    background-color: rgba(0, 0, 0, 0.6); /* Black color with 50% transparency */
+    background-blend-mode: darken;
+    height: auto;
+    margin-top: 5rem;
+}
+
+
+/* LAYER 1 */
+
+
+.footer-layer-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+
+.footer-layer-1 a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+/* LAYER 2 */
+
+
+.footer-layer-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  
+}
+
+
+.footer-layer-2 ul {
+  list-style: none;
+ 
+}
+
+.footer-layer-2 ul h4 {
+    font-size: 1.3rem;
+    padding: 0.3rem 1.8rem;
+}
+
+.footer-layer-2 ul li {
+    padding: 0.4rem;
+}
+
+.footer-layer-2 ul a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+
+.footer-layer-2 li a{
+text-decoration: none;
+color: var(--white); 
+padding: 0.3rem 1.8rem;
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+transition: all 0.15s ease-in-out;
+
+}
+
+
+.footer-layer-2 li a:hover {
+    background-color: var(--green);
+    clip-path: polygon(25% 0%, 100% 0%, 65% 100%, 0% 100%);
+}
+
+
+
+
+/* END */
+
+
+/* LAYER-3 */
+
+
+.footer-layer-3 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+  
+
+    
+}
+
+
+.footer-layer-3 img {
+    width: 100%;
+    height: 40px;
+    transition: all 0.15s ease-in;
+
+}
+
+.footer-layer-3 img:hover {
+filter: drop-shadow(0 0 5px var(--green));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 600px) {
+
+
+
+
+/* NAV-MENU */
+
+nav ul {
+    display: none;
+}
+
+nav {
+    display: none;
+}
+
+#mobile-nav {
+    width: 100%;
+    /* Background - setup */
+    background-image: url(Images/gaming-image-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* clip-path: polygon(0 0, 100% 2%, 100% 75%, 0% 100%); */
+    background-color: rgba(0, 0, 0, 0.45); /* Black color with 50% transparency */
+    background-blend-mode: darken;
+    /* Background - end */
+    height: 200px; 
+    /* Content - setup */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1rem;
+
+
+}
+
+#mobile-nav img {
+transform: scale(0.6);
+}
+
+h1 {
+    font-size: 1.4rem;
+}
+
+
+
+/* END */
+
+
+
+
+
+
+
+/* MOBILE EXPAND NAV */
+
+
+
+#mobile-expand-nav {
+    display: flex;
+    /* visibility: visible;   */
+    margin: 0 auto;
+    background-image: url(Images/expand-menu-wallpaper.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.45); /* Black color with 50% transparency */
+    background-blend-mode: darken;
+
+}
+
+
+#mobile-expand-nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    color: var(--white);
+    row-gap: 2rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+
+#mobile-expand-nav ul a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 0.3rem 1.8rem;
+    transition: all 0.15s ease-in-out;
+  
+
+}
+
+#mobile-expand-nav ul a:hover {
+    
+    background-color: var(--green);
+}
+
+/* END */
+
+
+/* MAIN */
+
+.naslov img {
+    transform: scale(0.4); 
+}
+
+.naslov {
+    margin: 0 auto;
+}
+
+
+
+
+
+
+/* MAIN NEWS CONTAINER */
+
+
+
+.news-container {
+   
+    border: 2px solid var(--green);
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.image-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+
+
+
+
+.image-box img {
+    width: 100%;
+   cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+.image-box img:hover {
+    transform: scale(1.2);
+    
+}
+
+
+.news-about {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 2rem;
+}
+
+.news-bottom {
+    font-size: 0.6rem;
+}
+
+
+
+/* END */
+
+
+
+
+.arrow-up {
+    width: 5%;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+   
+  
+  }
+
+
+
+/* FOOTER MOBILE */
+
+footer {
+    width: 100%;
+    /* Background - setup */
+    background-image: url(Images/gaming-image-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* clip-path: polygon(0 0, 100% 2%, 100% 75%, 0% 100%); */
+    background-color: rgba(0, 0, 0, 0.45); /* Black color with 50% transparency */
+    background-blend-mode: darken;
+    height: auto;
+    margin-top: 5rem;
+}
+
+/* LAYER 1 */
+
+.footer-layer-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    row-gap: 1rem;
+}
+
+
+
+
+
+
+/* LAYER 2 */
+
+.footer-layer-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+
+.footer-layer-2 ul {
+  list-style: none;
+ 
+}
+
+.footer-layer-2 ul h4 {
+    font-size: 1.3rem;
+    /* padding: 0.3rem 1.8rem; */
+}
+
+
+.footer-layer-2 ul a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+
+.footer-layer-2 li a{
+text-decoration: none;
+color: var(--white); 
+/* padding: 0.3rem 1.8rem; */
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+transition: all 0.15s ease-in-out;
+
+}
+
+
+.footer-layer-2 li a:hover {
+    background-color: var(--green);
+    clip-path: polygon(25% 0%, 100% 0%, 65% 100%, 0% 100%);
+}
+
+
+.footer-layer-3 img {
+
+    height: 30px;
+}
+
+
+
+}
